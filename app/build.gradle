@@ -45,8 +45,6 @@ dependencies {
     api project(":data")
     api project(":domain")
     api project(":entities")
-    api project(":popularpersons")
-    api project(":details")
 
     //kotlin
     implementation(Kotlin.kotlin_stdlib_jdk)
