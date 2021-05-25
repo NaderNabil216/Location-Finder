@@ -1,0 +1,8 @@
+include ':details'
+include ':popularpersons'
+include ':entities'
+include ':data'
+include ':navigation'
+include ':core'
+include ':domain'
+include ':app'

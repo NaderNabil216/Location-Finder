@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Clean-architecture.iml" filepath="$PROJECT_DIR$/.idea/modules/Clean-architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Clean-architecture.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Clean-architecture.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Clean-architecture.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Clean-architecture.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Clean-architecture.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Clean-architecture.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Clean-architecture.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Clean-architecture.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/details/Clean-architecture.details.iml" filepath="$PROJECT_DIR$/.idea/modules/details/Clean-architecture.details.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Clean-architecture.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Clean-architecture.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/Clean-architecture.entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/Clean-architecture.entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/Clean-architecture.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/Clean-architecture.navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/popularpersons/Clean-architecture.popularpersons.iml" filepath="$PROJECT_DIR$/.idea/modules/popularpersons/Clean-architecture.popularpersons.iml" />
+    </modules>
+  </component>
+</project>

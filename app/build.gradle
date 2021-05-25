@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'dagger.hilt.android.plugin'
+
+
+android {
+    compileSdkVersion (Android.compileSdkVersion)
+    defaultConfig {
+        applicationId = Android.applicationId
+        minSdkVersion (Android.minSdkVersion)
+        targetSdkVersion (Android.targetSdkVersion)
+        versionCode = Android.versionCode
+        versionName = Android.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(":core")
+    api project(":data")
+    api project(":domain")
+    api project(":entities")
+    api project(":popularpersons")
+    api project(":details")
+
+    //kotlin
+    implementation(Kotlin.kotlin_stdlib_jdk)
+    implementation(Kotlin.kotlin_stdlib)
+    implementation(Kotlin.core_ktx)
+    implementation(Kotlin.kotlin_reflect)
+
+    //Androidx
+    implementation(Androidx.appcompat)
+    implementation(Androidx.fragment)
+    implementation(Androidx.cardview)
+    implementation(Androidx.recyclerview)
+    implementation(Androidx.multidex)
+    implementation(Androidx.lifecycle)
+    implementation(Androidx.legacy)
+    kapt(Androidx.appcompat)
+    implementation(Androidx.ifecycle_reactivestreams)
+    implementation(Androidx.lifecycle_common)
+    implementation(Androidx.lifecycle_runtime)
+    implementation(Androidx.lifecycle_livedata)
+    implementation(Androidx.constraintlayout)
+    implementation(Androidx.navigation_fragment)
+    implementation(Androidx.navigation_ui)
+    implementation(Androidx.lifecycle_viewmodel)
+
+    //Room
+    implementation(Androidx.room_runtime)
+    implementation(Androidx.room_ktx)
+    kapt(Androidx.room_compiler_kapt)
+
+    //Material
+    implementation(Material.material)
+
+    //picasso
+    implementation(Picasso.picasso)
+
+    //Retrofit
+    implementation(Retrofit.retrofit2)
+    implementation(Retrofit.okhttp3)
+    implementation(Retrofit.converter_gson)
+    implementation(Retrofit.logging_interceptor)
+
+    //Gson
+    implementation(Gson.gson)
+
+    //Coroutines
+    implementation(Coroutines.core)
+    implementation(Coroutines.android)
+
+    //Groupie
+    implementation(Groupie.groupie)
+    implementation(Groupie.groupie_extension)
+
+    //Shared Pref
+    implementation(SharedPreference.sharedPreference)
+
+    //Hilt
+    implementation(Hilt.hilt_android)
+    implementation(Hilt.viewmodel)
+    kapt(Hilt.kapt_hilt_android)
+    kapt(Hilt.kapt_hilt_compiler)
+}
