@@ -7,9 +7,110 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorHint">@color/blue_grey</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="MaterialAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorHint">@color/blue_grey</item>
+    </style>
+
+    <style name="MaterialAppTheme.NoBackgroundColor" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+.        <item name="android:textColorHint">@color/blue_grey</item>
+    </style>
+
+
+    <style name="TextInputLayout.DropDownStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="materialThemeOverlay">@style/OverlayFilledPadding</item>
+    </style>
+
+    <style name="OverlayFilledPadding" parent="ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense">
+        <item name="autoCompleteTextViewStyle">@style/OutlineBox_padding</item>
+    </style>
+
+    <style name="OutlineBox_padding" parent="Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense">
+        <!-- padding -->
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+
+    <style name="dialog_animation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_with_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_down_with_fade_out</item>
+    </style>
+
+    <style name="errorTextAppearance">
+        <item name="android:textSize">@dimen/x14sp</item>
+        <item name="android:fontFamily">@font/sst_arabic_roman</item>
+    </style>
+
+    <style name="ImagePickerTheme" parent="ef_BaseTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FilerPickerTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="tabStyle">@style/PickerTabLayout</item>
+    </style>
+
+ <style name="ImagePickerThemePro" parent="@style/Matisse.Zhihu">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="tabStyle">@style/PickerTabLayout</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/white</item>
+        <!--<item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar.Light</item>-->
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Toolbar.Primary</item>
+    </style>
+
+    <style name="PickerTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <!--        tab background-->
+        <item name="tabBackground">@color/colorPrimary</item>
+        <!--        tab text color selector : set selector accordingly to dark or light theme-->
+        <item name="tabTextColor">@color/file_picker_selector</item>
+        <!--        tab indicator color: set indicator color accordingly-->
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialComponents.Toolbar.Primary" parent="">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
 </resources>

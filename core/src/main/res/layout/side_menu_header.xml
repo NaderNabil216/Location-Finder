@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x220dp"
+    android:background="@color/colorPrimary"
+    android:paddingStart="@dimen/x30dp"
+    android:paddingEnd="@dimen/x30dp"
+    android:paddingBottom="@dimen/x18dp">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/x52dp"
+        android:layout_height="@dimen/x52dp"
+        android:layout_marginBottom="@dimen/x20dp"
+        android:padding="@dimen/x4dp"
+        android:src="@drawable/ic_side_menu_logo"
+        android:contentDescription="@string/profile"
+        app:layout_constraintBottom_toTopOf="@id/img_profile"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_logo" />
+
+    <Button
+        android:id="@+id/btn_my_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x14dp"
+        android:background="@drawable/shape_rounded_yellow_gredient_bg"
+        android:elevation="@dimen/x4dp"
+        android:fontFamily="@font/sst_arabic_bold"
+        android:minWidth="@dimen/x108dp"
+        android:text="@string/my_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_profile" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/x48dp"
+        android:layout_height="@dimen/x48dp"
+        android:layout_marginBottom="@dimen/x12dp"
+        android:src="@drawable/ic_profile_dummy"
+        app:riv_mutate_background="true"
+        android:background="@color/beige"
+        app:layout_constraintBottom_toTopOf="@id/btn_my_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:riv_oval="true" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sst_arabic_bold"
+        android:lineSpacingExtra="-3sp"
+        android:text="@string/mohammed_ali"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x16sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_department"
+        app:layout_constraintStart_toStartOf="@id/btn_my_profile"
+        app:layout_constraintTop_toTopOf="@id/img_profile"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x4dp"
+        android:fontFamily="@font/sst_arabic_roman"
+        android:lineSpacingExtra="-7sp"
+        android:text="@string/software_developer"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/img_profile"
+        app:layout_constraintStart_toStartOf="@id/btn_my_profile"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

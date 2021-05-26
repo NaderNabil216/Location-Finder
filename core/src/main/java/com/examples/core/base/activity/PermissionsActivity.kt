@@ -3,12 +3,16 @@ package com.examples.core.base.activity
 import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.examples.core.R
 
+/**
+ * Created by Nader Nabil
+ */
 abstract class PermissionsActivity : BaseActivity() {
 
     abstract var permissions: Array<String>
 
-    val requestPermissions =
+    val requestPermissionsLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
             // Do something if some permissions granted or denied
             val allGranted = permissions.entries.map {
@@ -16,7 +20,7 @@ abstract class PermissionsActivity : BaseActivity() {
             }.map { it == PackageManager.PERMISSION_GRANTED }.find { !it } ?: true
 
             if (!allGranted) {
-                Toast.makeText(this, "Permissions are not granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.permission_are_not_granted), Toast.LENGTH_SHORT).show()
             }
         }
 }

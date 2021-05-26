@@ -1,18 +1,21 @@
 package com.examples.domain.base
 
 import com.examples.data.mapper.CloudErrorMapper
-import com.examples.entities.response.ErrorModel
+import com.examples.entities.base.ErrorModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 typealias CompletionBlock<T> = RemoteUseCase.Request<T>.() -> Unit
 
 /**
+ * Created by Nader Nabil
+ */
+/**
  * @type in P paramater
  * @type R DTO result
  * @type FR(final result) mapped DTO to BO
  */
-abstract class RemoteUseCase<P, R, FR>(val errorUtil: CloudErrorMapper) {
+abstract class RemoteUseCase<P, R, FR>(private val errorUtil: CloudErrorMapper) {
 
     private var parentJob: Job = Job()
     private var backgroundContext: CoroutineContext = Dispatchers.IO
@@ -37,6 +40,7 @@ abstract class RemoteUseCase<P, R, FR>(val errorUtil: CloudErrorMapper) {
                 response(cancellationException)
                 response(false)
             } catch (e: Exception) {
+                e.printStackTrace()
                 val error = errorUtil.mapToDomainErrorException(e)
                 response(error)
                 response(false)
@@ -45,7 +49,7 @@ abstract class RemoteUseCase<P, R, FR>(val errorUtil: CloudErrorMapper) {
     }
 
 
-    fun unsubscribe() {
+    private fun unsubscribe() {
         parentJob.apply {
             cancelChildren()
             cancel()

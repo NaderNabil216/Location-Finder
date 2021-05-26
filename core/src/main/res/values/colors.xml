@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#712c81</color>
-    <color name="colorPrimaryDark">#712c81</color>
-    <color name="colorAccent">#712c40</color>
+    <color name="colorPrimary">#006450</color>
+    <color name="colorPrimaryDark">#006450</color>
+    <color name="colorAccent">#49a487</color>
     <color name="white">#fff</color>
+    <color name="white_60_opacity">#99ffffff</color>
     <color name="bg">#FAF8F8</color>
     <color name="warm_purple">#712c81</color>
     <color name="deep_lavender">#995db0</color>
+    <color name="dull_orange">#d09d42</color>
+    <color name="slate_grey">#55565e</color>
+    <color name="grey">#979797</color>
+    <color name="dark_grey">#23292f</color>
+    <color name="light_grey">#f7f9fd</color>
+    <color name="black">#000</color>
+    <color name="textColor">#23292f</color>
+    <color name="dark_blue_green">#006450</color>
+    <color name="close_pink">#f16b6b</color>
+    <color name="light_blue_green">#1da78b</color>
+    <color name="light_periwinkle">#dcdde5</color>
+    <color name="blue_grey">#868894</color>
+    <color name="ocean_green">#49a487</color>
+    <color name="ocean_green_semi_trans">#3349A487</color>
+    <color name="light_gray">#9AD8D8D8</color>
+    <color name="dark_pink">#ed5454</color>
+    <color name="dark_white">#4ae5e5e5</color>
+    <color name="light_green">#e1f0ea</color>
+    <color name="beige">#f5f5f5</color>
+    <color name="grey_2">#828282</color>
+    <color name="grey_3">#19729fc5</color>
+
+    <color name="beige_2">#f5f5f5</color>
+    <color name="beige_2_trans">#CCF5F5F5</color>
+    <color name="squash">#d99a28</color>
+    <color name="tint_light_gray">#9AF6F6F6</color>
+
+    <color name="unread_item">#f2f9f6</color>
+
+    <color name="rejected_notification">#fef0f0</color>
+    <color name="rejected_notification_dark">#1AF16B6B</color>
+
+    <color name="approved_notification">#f2f9f6</color>
+    <color name="approved_notification_dark">#e1f1eb</color>
+
+    <color name="default_notification">#FFF</color>
+    <color name="default_notification_dark">#f7f9fd</color>
+
 </resources>

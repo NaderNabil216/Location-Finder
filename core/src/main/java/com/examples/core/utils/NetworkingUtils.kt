@@ -6,7 +6,7 @@ import android.net.NetworkInfo
 import android.telephony.TelephonyManager
 
 /**
- * Created by shehab on 4/17/2018.
+ * Created by Nader Nabil on 4/17/2018.
  */
 
 object NetworkingUtils {

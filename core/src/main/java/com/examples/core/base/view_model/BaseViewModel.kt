@@ -5,14 +5,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.examples.entities.response.ErrorModel
-import com.examples.entities.response.ErrorStatus
+import com.examples.core.base.fragment.NetworkBaseFragment
 import com.examples.domain.base.CompletionBlock
-import java.util.concurrent.CancellationException
+import com.examples.entities.base.ErrorModel
+import com.examples.entities.base.ErrorStatus
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.launch
+import java.util.concurrent.CancellationException
 
+/**
+ *Created by Nader Nabil
+ */
 @ExperimentalCoroutinesApi
 open class BaseViewModel @ViewModelInject constructor() : ViewModel() {
     private val isLoading: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
@@ -24,61 +28,62 @@ open class BaseViewModel @ViewModelInject constructor() : ViewModel() {
     private val cancellationMessage: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val cancellationMsgLiveData: LiveData<String> by lazy { cancellationMessage }
 
-    fun setLoading(isLoading: Boolean){
+
+    fun setLoading(isLoading: Boolean) {
         this.isLoading.value = isLoading
     }
 
-    fun setErrorReason(errorModel: ErrorModel){
+    fun setErrorReason(errorModel: ErrorModel) {
         error.value = errorModel
     }
 
-    fun setCancellationReason(cancellationException: CancellationException){
+    fun setCancellationReason(cancellationException: CancellationException) {
         cancellationMessage.value = cancellationException.message
     }
 
-    fun <T> callApi(data: MutableLiveData<T> ,apiCall: (CompletionBlock<T>)->Unit) {
-        apiCall.invoke {
-            isLoading {
-                isLoading.value = it
-            }
-            onComplete {
-                data.value = it
-            }
-            onError { throwable ->
-                when (throwable.errorStatus) {
-                    ErrorStatus.UNAUTHORIZED -> {
-                    }
-                    else -> error.value = throwable
+    fun <T> callApi(data: MutableLiveData<T>, apiCall: (CompletionBlock<T>) -> Unit) {
+        if (NetworkBaseFragment.isNetworkConnected) {
+            apiCall.invoke {
+                isLoading {
+                    isLoading.value = it
                 }
 
+                onComplete {
+                    data.value = it!!
+                }
+                onError { throwable ->
+                    error.value = throwable
+
+                }
+                onCancel {
+                    cancellationMessage.value = it.message
+                }
             }
-            onCancel {
-                cancellationMessage.value = it.message
-            }
+        } else {
+            error.value = ErrorModel("No internet connection", 0, ErrorStatus.NO_CONNECTION)
         }
     }
 
-    fun <T> callApi(data: ConflatedBroadcastChannel<T>, apiCall: (CompletionBlock<T>)->Unit) {
-        apiCall.invoke {
-            isLoading {
-                isLoading.value = it
-            }
-            onComplete {
-                viewModelScope.launch {
-                    data.offer(it)
+    fun <T> callApi(data: ConflatedBroadcastChannel<T>, apiCall: (CompletionBlock<T>) -> Unit) {
+        if (NetworkBaseFragment.isNetworkConnected) {
+            apiCall.invoke {
+                isLoading {
+                    isLoading.value = it
                 }
-            }
-            onError { throwable ->
-                when (throwable.errorStatus) {
-                    ErrorStatus.UNAUTHORIZED -> {
+                onComplete {
+                    viewModelScope.launch {
+                        data.offer(it)
                     }
-                    else -> error.value = throwable
                 }
-
+                onError { throwable ->
+                    error.value = throwable
+                }
+                onCancel {
+                    cancellationMessage.value = it.message
+                }
             }
-            onCancel {
-                cancellationMessage.value = it.message
-            }
+        } else {
+            error.value = ErrorModel("No internet connection", 0, ErrorStatus.NO_CONNECTION)
         }
     }
 }

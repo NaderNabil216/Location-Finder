@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">جزت</string>
+
+    <string name="loading">برجاء الإنتظار …</string>
+    <string name="health">Health</string>
+    <string name="signin">تسجيل الدخول</string>
+    <string name="start">Start</string>
+    <string name="name">Alicia Scott</string>
+    <string name="date">Today 03:14PM </string>
+    <string name="empty_list">oops, List is empty.</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="not_clicked">not_clicked</string>
+    <string name="clicked">clicked</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular_persons">Popular persons</string>
+    <string name="lorem_cell"> وريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
+أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا .</string>
+
+    <string name="gazt_invite">تدعو الهيئة العامة للزكاة والدخل الشركات إلى تقديم إقرارات ضريبة القيمة المضافة لشهري أبريل ويوليو</string>
+    <string name="lorem">وريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
+
+أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
+
+أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
+
+أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
+
+نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا
+
+كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم."
+
+"سيت يتبيرسبايكياتيس يوندي أومنيس أستي ناتيس أيررور سيت فوليبتاتيم أكيسأنتييوم
+
+دولاريمكيو لايودانتيوم,توتام ريم أبيرأم,أيكيو أبسا كيواي أب أللو أنفينتوري فيرأتاتيس ايت
+
+كياسي أرشيتيكتو بيتاي فيتاي ديكاتا سيونت أكسبليكابو. نيمو أنيم أبسام فوليوباتاتيم كيواي
+
+فوليوبتاس سايت أسبيرناتشر أيوت أودايت أيوت فيوجايت, سيد كيواي كونسيكيونتشر ماجناي
+
+دولارس أيوس كيواي راتاشن فوليوبتاتيم سيكيواي نيسكايونت. نيكيو بوررو كيوايسكيوم
+
+ايست,كيواي دولوريم ايبسيوم كيوا دولار سايت أميت, كونسيكتيتيور,أديبايسكاي فيلايت, سيد
+
+كيواي نون نيومكيوام ايايوس موداي تيمبورا انكايديونت يوت لابوري أيت دولار ماجنام
+
+ألايكيوام كيوايرات فوليوبتاتيم. يوت اينايم أد مينيما فينيام, كيواس نوستريوم أكسيركايتاشيم
+
+يلامكوربوريس سيوسكايبيت لابورايوسام, نايساي يوت ألايكيوايد أكس أيا كوموداي
+
+كونسيكيواتشر؟ كيوايس أيوتيم فيل أيوم أيوري ريبريهينديرايت كيواي ان إيا فوليوبتاتي
+
+فيلايت ايسسي كيوم نايهايل موليستايا كونسيكيواتيو,فيلايليوم كيواي دولوريم أيوم فيوجايات كيو
+
+فوليوبتاس نيولا باراياتيور؟"
+
+" أت فيرو ايوس ايت أكيوساميوس ايت أيوستو أودايو دايجنايسسايموس ديوكايميوس كيواي
+
+بلاندايتاييس برايسينتايوم فوليوبتاتيوم ديلينايتاي أتكيوي كورريوبتاي كيوأوس دولوريس أيت
+
+سيما يليكيوسيونت ان كيولبا كيواي أوفايكيا ديسيريونت موللايتايا انايماي, أيدي ايست لابوريوم
+
+دايستا ينستايو. نام لايبيرو تيمبور, كيوم سوليوتا نوبايس ايست ايلاجينداي أوبتايو كيومكيوي
+
+نايهايل ايمبيدايت كيو ماينيوس ايدي كيوود ماكسهيمي بلاسايت فاسيري بوسسايميوس,أومنايس
+
+فوليوبتاس ايت ايوت أسسيو ميندايست, أومنيوس دولار ريبيللينديوس. تيمبورايبيوس أيوتيم
+
+كيواس موليستاياس أكسكيبتيوراي ساينت أوككايكاتاي كيبايدايتات نون بروفايدنت
+
+أيت دولوريوم فيوجا.ايت هاريوم كيوايديم ريريوم فاكايلايسايست ايت أكسبيدايتا
+
+كيوايبيوسدام ايت أوت
+
+أوففايكايس ديبايتايس أيوت ريريوم نيسيسسايتاتايبيوس سايبي ايفينايت يوت ايت فوليبتاتيس
+
+ريبيودايايانداي ساينت ايت موليسفاياي نون ريكيوسانداي.اتاكيوي ايريوم ريريوم هايس تينيتور
+
+أ ساباينتي ديليكتيوس, يوت أيوت رياسايندايس فوليوبتاتايبص مايوريس ألايس
+
+كونسيكيواتور أيوت بيرفيريندايس دولورايبيوس أسبيرايوريس ريبيللات .</string>
+    <string name="loading_more">تحميل المزيد …</string>
+    <string name="favorite_news">المفضلة</string>
+    <string name="favorites">المفضلة</string>
+    <string name="details">التفاصيل</string>
+    <string name="news_list">الأخبار</string>
+    <string name="latest_news">اخر الاخبار</string>
+    <string name="news">الاخبار</string>
+    <string name="share_using">شارك باستخدام</string>
+    <string name="added_to_favourites">تمت الإضافة إلى المفضلة</string>
+    <string name="removed_from_favourites">تمت إزالته من المفضلة</string>
+    <string name="announcements">التعاميم</string>
+    <string name="latest_announcements">آخر التعاميم</string>
+    <string name="favorite_announcements"> المفضلة</string>
+    <string name="attachments">المرفقات</string>
+    <string name="urgent">عاجل</string>
+    <string name="medium">مهم</string>
+    <string name="normal">أقل أهمية</string>
+    <string name="there_s_no_news_yet">لا توجد أخبار حتى الآن</string>
+    <string name="there_s_no_internal_news_yet">لا توجد أخبار داخلية حتى الآن</string>
+
+    <string name="there_s_no_fav_news_yet">لا توجد أخبار مفضلة حتى الآن</string>
+    <string name="there_s_no_internal_fav_news_yet">لا توجد أخبار داخلية مفضلة حتى الآن</string>
+    <string name="please_try_after_sometime">يرجى المحاولة بعد مرور بعض الوقت</string>
+    <string name="internal_news">الاخبار الداخلية</string>
+    <string name="view_all">مشاهدة الكل</string>
+    <string name="see_all">مشاهدة الكل</string>
+    <string name="dashboard">الرئيسية</string>
+    <string name="added_to_favourite">تم الإضافة الى المفضلة</string>
+    <string name="removed_from_favourite">تم الإزالة من المفضلة</string>
+    <string name="no_favourite_announcements_yet">لا توجد تعاميم مفضلة حتي الان</string>
+    <string name="there_s_no_announcements_yet">لا توجد تعاميم حتي الان</string>
+    <string name="sucess_added_news_to_favorite">تم إضافة الخبر إلى المفضلة بنجاح</string>
+    <string name="success_removed_news_from_favorite">تم ازالة الخبر من المفضلة بنجاح</string>
+    <string name="Terms">الشروط و الأحكام</string>
+    <string name="announcement">تعميم</string>
+
+    <string name="event_history">أرشيف الفعاليات</string>
+    <string name="no_upcoming_events">لا يوجد فعاليات قادمة</string>
+    <string name="to">إلى</string>
+
+    <string name="my_profile">الملف الشخصي</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="about_diwan">عن ديوان</string>
+
+    <!-- side menu -->
+    <string name="diwan_home">الصفحة الرئيسية</string>
+    <string name="my_dashboard">التحكم</string>
+    <string name="my_inbox">صندوق الوارد</string>
+    <string name="my_development">التطوير</string>
+    <string name="my_performance">أدائي</string>
+    <string name="my_academy">الاكاديمية</string>
+    <string name="gazt_apps">تطبيقات الهيئة</string>
+    <string name="my_calender">تقويمي</string>
+    <string name="my_reporting">احصائياتى</string>
+
+    <string name="available_until">متاح حتى </string>
+    <string name="latest_internal_news">آخر الأخبار الداخلية</string>
+    <string name="more_details">المزيد</string>
+    <string name="valid_to">متاح حتى </string>
+    <string name="our_offers">عروض الموظفين</string>
+    <string name="special_offers">عروض الموظفين</string>
+    <string name="filter_by">صنف حسب</string>
+    <string name="promo_code">الكود الترويجي</string>
+    <string name="favorite_internal_news">المفضلة</string>
+    <string name="my_settings">اعداداتي</string>
+    <string name="manage_your_account_settings_password_notifications_your_prefered_language">إدارة إعدادات حسابك. الإشعارات ولغتك المفضلة.</string>
+    <string name="notifications">الاشعارات</string>
+    <string name="language">اللغة</string>
+    <string name="choose_the_preferred_language">اختر اللغة المفضلة.</string>
+    <string name="arabic">العربية</string>
+    <string name="english">الإنجليزية</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="settings">الاعدادات</string>
+    <string name="there_is_no_offers_yet">لا توجد عروض الان</string>
+    <string name="sar"> ريال</string>
+    <string name="newest">الأجدد</string>
+    <string name="oldest">الأقدم</string>
+    <string name="select_category">التصنيف</string>
+    <string name="sorting">الترتيب</string>
+    <string name="basic_information">المعلومات الاساسية</string>
+    <string name="dependents">المعالين</string>
+    <string name="payroll_information">الحساب البنكى</string>
+    <string name="payroll">الحساب البنكى</string>
+
+    <string name="employment_information">تفاصيل الموظف</string>
+    <string name="career">المسار المهنى</string>
+    <string name="takleef_information">معلومات التكليف</string>
+    <string name="team_members">أعضاء الفريق</string>
+
+    <string name="services">الخدمات</string>
+    <string name="all">الكل</string>
+    <string name="show_all">الكل</string>
+    <string name="about">عن</string>
+    <string name="shehab_elsarky">محم السويلم</string>
+    <string name="ibrahem">ابراهيم فرج</string>
+    <string name="direct_manager">المدير المباشر</string>
+
+    <string name="software_developer">مطور اعمال</string>
+    <string name="software_development">إدارة تطوير الأعمال</string>
+    <string name="email_request">طلب بريد الكتروني</string>
+    <string name="there_is_no_internet_connection">لايوجد اتصال بالانترنت</string>
+    <string name="okay">حسنا</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالإنترنت</string>
+    <string name="internal_server_error">خطأ في الخادم</string>
+    <string name="unknown_host">لا يمكن الوصول للخادم</string>
+    <string name="please_check_your_internet_connection_and_try_again">يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى</string>
+    <string name="categories">الأقسام</string>
+    <string name="HR">الموارد البشرية</string>
+
+    <string name="check_all_requests_received_and_sent">تحقق من جميع الطلبات الواردة والمرسلة.</string>
+    <string name="what_category_are_you_looking_in">في أي فئة تبحث؟</string>
+    <string name="human_resources">Human Resources</string>
+    <string name="personal">معلوماتى الشخصية</string>
+    <string name="contact_address">معلومات التواصل</string>
+    <string name="contact">معلومات التواصل</string>
+    <string name="emergency">الاتصال بالطوارئ</string>
+    <string name="emergency_contact">الاتصال بالطوارىء</string>
+
+    <string name="personal_information">معلوماتى الشخصية</string>
+
+    <string name="business_department">قسم الأعمال</string>
+    <string name="diwan_version">DIWAN v%s © 2020</string>
+    <string name="employment_certificate_with_salary_details_pdf">شهادة توظيف مع تفاصيل الراتب. pdf</string>
+    <string name="first_name_en">الاسم الأول (بالإنجليزية)</string>
+    <string name="second_name_en">الاسم الثانى (بالإنجليزية)</string>
+    <string name="third_name_en">الاسم الثالث (بالإنجليزية)</string>
+    <string name="last_name_en">الاسم الاخير (بالإنجليزية)</string>
+    <string name="first_name_ar">الاسم الأول (بالعربية)</string>
+    <string name="second_name_ar">الاسم الثانى (بالعربية)</string>
+    <string name="third_name_ar">الاسم الثالث (بالعربية)</string>
+    <string name="last_name_ar">الاسم الاخير (بالعربية)</string>
+    <string name="Mohsen">Mohesen</string>
+    <string name="hr">الموارد البشرية</string>
+    <string name="security">الحماية</string>
+    <string name="maintenance">اعمال الصيانة</string>
+    <string name="it">تكنولوجيا المعلومات</string>
+    <string name="emp_benefits">استحقاقات الموظفين</string>
+    <string name="finance">المالية</string>
+    <string name="all_services">جميع الخدمات</string>
+    <string name="co">العمليات المركزية</string>
+    <string name="mohammed_ali">محمد على</string>
+    <string name="salutation">اللقب</string>
+    <string name="mr">سيد</string>
+    <string name="formal_name">الاسم الرسمي</string>
+    <string name="bader">بدر</string>
+    <string name="gender">النوع</string>
+    <string name="male">ذكر</string>
+    <string name="marital">الحالة الاجتماعية</string>
+    <string name="married">متزوج</string>
+    <string name="nationality">الجنسية</string>
+    <string name="saudi">سعودي</string>
+    <string name="snationality">الجنسية الثانوية</string>
+    <string name="native_lang">اللغة الأم</string>
+    <string name="challenge_status">حالة التحدي</string>
+    <string name="no">لا</string>
+    <string name="please_check_web_app_to_view_all_details">يرجى التحقق من تطبيق الويب لعرض جميع التفاصيل</string>
+    <string name="previous_actions">الإجراءات السابقة</string>
+    <string name="approve">وافق</string>
+    <string name="_3_hours_ago">منذ 3 ساعات</string>
+    <string name="processed_as">تمت المعالجة عن طريق</string>
+    <string name="hr_department">قسم التنمية البشرية</string>
+    <string name="process_date">تاريخ العملية</string>
+    <string name="_12_aug_2020">12 اغسطس 2020</string>
+    <string name="comment">تعليق</string>
+    <string name="i_have_to_take_a_few_sick_days_off_due_to_my_surgery_appointment_end_of_this_week">لا بد لي من أخذ بضعة أيام إجازة بسبب المرض
+موعد الجراحة نهاية هذا الأسبوع</string>
+    <string name="request_details">تفاصيل الطلب</string>
+    <string name="discussions">المناقشات</string>
+    <string name="expand_card_to_see_full_process_details">قم بتوسيع البطاقة للاطلاع على تفاصيل العملية الكاملة</string>
+    <string name="unfortunately_you_can_t_take_your_action_from_here_please_go_to_web_app">للأسف لا يمكنك اتخاذ الإجراء الخاص بك من هنا ، يرجى الانتقال إلى تطبيق الويب</string>
+    <string name="there_is_no_discussions_yet">لا توجد مناقشات حتى الان</string>
+    <string name="benefits">الفوائد</string>
+    <string name="educational_information">التعليم</string>
+    <string name="work_experience">الخبرات المهنية</string>
+    <string name="certificates">شهادات تعليمية تدريبية</string>
+
+    <string name="empty_requests">لا يوجد طلبات حتى الآن</string>
+    <string name="empty_tasks">لا يوجد رسائل حتى الآن</string>
+    <string name="write_here">اكتب هنا</string>
+    <string name="there_is_no_discussion">لا يوجد مناقشة</string>
+    <string name="out_of_memory">لا يوجد مساحة كافية</string>
+    <string name="error_loading_image">الصورة غير صالحة</string>
+    <string name="if_you_close_this_request_you_will_permanently_lose_the_data">إذا أغلقت هذا الطلب، فستفقد البيانات بشكل دائم</string>
+    <string name="please_fill_in_all_the_required_fields">يرجى ملء جميع الحقول المطلوبة</string>
+    <string name="no_app_found">لم يتم العثور على تطبيق لفتح المرفق</string>
+    <string name="pick_image">اختر صورة</string>
+    <string name="pick_file">اختر ملف</string>
+    <string name="comments">التعليقات</string>
+    <string name="example_of_additional_information_to_provide_any_error_messages_received_or_description_of_issue_s">مثال على المعلومات الإضافية التي يجب تقديمها: أي رسائل خطأ مستلمة أو وصف للمشكلة (المشكلات)</string>
+    <string name="request_action">الإجراءات</string>
+    <string name="add_attachment">إضافة المرفقات</string>
+    <string name="action_taken_successfully">تم اتخاذ الإجراء بنجاح</string>
+    <string name="error_in_taking_action">خطأ في اتخاذ الإجراء</string>
+    <string name="comment_is_required">برجاء كتابة التعليق</string>
+    <string name="max_number_of_files">الحد الأقصى لعدد المرفقات المضافة هو %s</string>
+
+    <string name="empty_favorite_service">لم يتم إضافه خدمات مفضله بعد</string>
+    <string name="empty_favorite_service_info">قم باضافة خدمة للمفضلة</string>
+    <string name="choose_Image">اختر صورة</string>
+    <string name="tab_to_select">اضغط للاختيار</string>
+    <string name="done">تم</string>
+    <string name="file_size_error">اقصى حجم للملف هو %d ميجا بايت</string>
+    <string name="you_should_allow_the_permissions_from_settings">يجب أن تسمح للأذونات من الإعدادات</string>
+    <string name="permission_are_not_granted">لم يتم منح الأذونات</string>
+    <string name="employees">الموظفين</string>
+    <string name="search_by_users_or_services">البحث عن طريق المستخدمين أو الخدمات</string>
+    <string name="type_a_keyword">اكتب كلمة البحث</string>
+    <string name="search_by_user_or_service_name">البحث عن طريق اسم المستخدم أو الخدمة</string>
+    <string name="recent_search">البحث الأخير</string>
+    <string name="clear_all">حذف الكل</string>
+    <string name="search_results_for_users">نتائج البحث عن المستخدمين</string>
+    <string name="no_search_result">لا توجد نتائج بحث</string>
+    <string name="try_another_keyword">استخدم كلمة اخري</string>
+    <string name="search_results_for_services">نتائج البحث عن الخدمات</string>
+    <string name="reopen_request">أعد فتح الطلب</string>
+    <string name="max_number_of_attachments">الحد الأقصى لعدد المرفقات هو %s</string>
+    <string name="from_date">From Date</string>
+    <string name="end_date">End Date</string>
+    <string name="enter_at_least_3_char">أدخل 3 أحرف علي الاقل للبحث</string>
+    <string name="topic">موضوع</string>
+
+</resources>

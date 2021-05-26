@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'de.mannodermaus.android-junit5'
 
 
 
@@ -20,16 +21,135 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+
     buildTypes {
+
+        def contentYouxelBaseUrl = '\"' + "http://40.114.214.132:82/api/" + '\"'
+        def userManagmentYouxelBaseUrl = '\"' + "http://40.114.214.132:84/api/" + '\"'
+        def selfServicesYouxelBaseUrl = '\"' + "http://40.114.214.132:85/Api/" + '\"'
+        def notificationsYouxelBaseUrl= '\"' + "http://40.114.214.132:91/api/InAppNotification/" + '\"'
+        def fileManagerYouxelBaseUrl= '\"' + "http://40.114.214.132:81/api/" + '\"'
+        def listOfValuesYouxelBaseUrl= '\"' + "http://40.114.214.132:81/api/" + '\"'
+
+        def contentGAZT_TST_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/ContentWebsite/api/" + '\"'
+        def userManagmentGAZT_TST_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/UserManager/api/" + '\"'
+        def servicesGAZT_TST_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/SelfService/Api/" + '\"'
+        def notificationsGAZT_TST_BaseUrl= '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/Notification/api/InAppNotification/" + '\"'
+        def fileManagerGAZT_TST_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/FileManager/api/" + '\"'
+        def listOfValuesGAZT_TST_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/diwan/ListOfValues/api/" + '\"'
+
+
+
+        def contentGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/ContentWebsite/api/" + '\"'
+        def userManagmentGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/UserManager/api/" + '\"'
+        def servicesGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/SelfService/Api/" + '\"'
+        def loginGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v1/api/auth/" + '\"'
+        def notificationsGAZT_STG_BaseUrl= '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/Notification/api/InAppNotification/" + '\"'
+        def fileManagerGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/FileManager/api/" + '\"'
+        def listOfValuesGAZT_STG_BaseUrl = '\"' + "https://stzgw-apic-gov.gazt.gov.sa/gazt-integration/test-third-party/v2/api/diwan/ListOfValues/api/" + '\"'
+
+
+
+        def contentGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/ContentWebsite/api/" + '\"'
+        def userManagmentGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/UserManager/api/" + '\"'
+        def servicesGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/SelfService/Api/" + '\"'
+        def loginGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/auth/" + '\"'
+        def notificationsGAZT_PROD_BaseUrl= '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/Notification/api/InAppNotification/" + '\"'
+        def fileManagerGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/FileManager/api/" + '\"'
+        def listOfValuesGAZT_PROD_BaseUrl = '\"' + "https://gw-apic-gov.gazt.gov.sa/gazt-integration/third-party/v1/api/diwan/ListOfValues/api/" + '\"'
+
+        def prodClientId = "b350b32ad9f83ca84d4f5004292e3caa"
+        def devClientId = "8018162825ddd06beac8942aac24e50c"
+
         release {
+            buildConfigField "String", "contentBaseUrl", contentGAZT_PROD_BaseUrl
+            buildConfigField "String", "servicesBaseUrl", servicesGAZT_PROD_BaseUrl
+            buildConfigField "String", "userManagmentBaseUrl", userManagmentGAZT_PROD_BaseUrl
+            buildConfigField "String", "loginBaseUrl", loginGAZT_PROD_BaseUrl
+            buildConfigField "String", "notificationsBaseUrl", notificationsGAZT_PROD_BaseUrl
+            buildConfigField "String", "fileManagerBaseUrl", fileManagerGAZT_PROD_BaseUrl
+            buildConfigField "String", "listOfValuesBaseUrl",listOfValuesGAZT_PROD_BaseUrl
+
+            buildConfigField "String", "CLIENT_ID", "\"${prodClientId}\""
+
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        YouxelServer{
+            initWith debug
+            buildConfigField "String", "contentBaseUrl", contentYouxelBaseUrl
+            buildConfigField "String", "servicesBaseUrl", selfServicesYouxelBaseUrl
+            buildConfigField "String", "userManagmentBaseUrl", userManagmentYouxelBaseUrl
+            buildConfigField "String", "loginBaseUrl", loginGAZT_STG_BaseUrl
+            buildConfigField "String", "notificationsBaseUrl", notificationsYouxelBaseUrl
+            buildConfigField "String", "listOfValuesBaseUrl",listOfValuesYouxelBaseUrl
+
+            buildConfigField "String", "CLIENT_ID", "\"${devClientId}\""
+            buildConfigField "String", "fileManagerBaseUrl", fileManagerYouxelBaseUrl
+        }
+
+        GaztTST{
+            initWith debug
+            buildConfigField "String", "contentBaseUrl", contentGAZT_TST_BaseUrl
+            buildConfigField "String", "servicesBaseUrl", servicesGAZT_TST_BaseUrl
+            buildConfigField "String", "userManagmentBaseUrl", userManagmentGAZT_TST_BaseUrl
+            buildConfigField "String", "loginBaseUrl", loginGAZT_STG_BaseUrl
+            buildConfigField "String", "notificationsBaseUrl", notificationsGAZT_TST_BaseUrl
+            buildConfigField "String", "fileManagerBaseUrl", fileManagerGAZT_TST_BaseUrl
+            buildConfigField "String", "listOfValuesBaseUrl",listOfValuesGAZT_TST_BaseUrl
+
+            buildConfigField "String", "CLIENT_ID", "\"${devClientId}\""
+        }
+
+        GaztSTG{
+            initWith debug
+            buildConfigField "String", "contentBaseUrl", contentGAZT_STG_BaseUrl
+            buildConfigField "String", "servicesBaseUrl", servicesGAZT_STG_BaseUrl
+            buildConfigField "String", "userManagmentBaseUrl", userManagmentGAZT_STG_BaseUrl
+            buildConfigField "String", "loginBaseUrl", loginGAZT_STG_BaseUrl
+            buildConfigField "String", "notificationsBaseUrl", notificationsGAZT_STG_BaseUrl
+            buildConfigField "String", "listOfValuesBaseUrl",listOfValuesGAZT_STG_BaseUrl
+
+            buildConfigField "String", "CLIENT_ID", "\"${devClientId}\""
+            buildConfigField "String", "fileManagerBaseUrl", fileManagerGAZT_STG_BaseUrl
+
+        }
+        GaztProd{
+            initWith release
+            buildConfigField "String", "contentBaseUrl", contentGAZT_PROD_BaseUrl
+            buildConfigField "String", "servicesBaseUrl", servicesGAZT_PROD_BaseUrl
+            buildConfigField "String", "userManagmentBaseUrl", userManagmentGAZT_PROD_BaseUrl
+            buildConfigField "String", "loginBaseUrl", loginGAZT_PROD_BaseUrl
+            buildConfigField "String", "notificationsBaseUrl", notificationsGAZT_PROD_BaseUrl
+            buildConfigField "String", "fileManagerBaseUrl", fileManagerGAZT_PROD_BaseUrl
+            buildConfigField "String", "listOfValuesBaseUrl",listOfValuesGAZT_PROD_BaseUrl
+
+            buildConfigField "String", "CLIENT_ID", "\"${prodClientId}\""
+
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.includeAndroidResources = true
+    }
+
+    sourceSets {
+        test{
+            resources.srcDirs += 'src/unitTests/resources'
+            java.srcDirs += "src/test-common/java"
+        }
+        androidTest{
+            java.srcDirs += "src/test-common/java"
+        }
+    }
+
 
     kotlinOptions {
         jvmTarget = "1.8"
@@ -69,10 +189,36 @@ dependencies {
     kapt(Hilt.kapt_hilt_compiler)
 
     //test
-    testImplementation(TestLib.junit)
-    androidTestImplementation(TestLib.runner)
+    //test
+    testImplementation (TestLib.junit)
+    androidTestImplementation(TestLib.junit)
+    androidTestImplementation(TestLib.androidxTestCore)
+    androidTestImplementation(TestLib.androidxTestCoreKtx)
+    androidTestImplementation(TestLib.core_testing)
+
+    testImplementation(TestLib.junit_jupiter_api)
+    testImplementation(TestLib.junit_jupiter_params)
+    testRuntimeOnly(TestLib.junit_jupiter_engine)
+
+    testImplementation(TestLib.mockito_core)
+
+    androidTestImplementation(TestLib.kotlinTest)
     androidTestImplementation(TestLib.espresso_core)
-    testImplementation(TestLib.mockito)
-    implementation(TestLib.core_testing)
-    implementation(TestLib.mockito_kotlin)
+    androidTestImplementation(TestLib.espresso_contrib)
+    androidTestImplementation(TestLib.androidx_espresso_idling_resource)
+    implementation(TestLib.androidx_espresso_idling_resource)
+
+    androidTestImplementation(TestLib.mockk)
+    androidTestImplementation(TestLib.runner)
+    androidTestImplementation(TestLib.testRules)
+    androidTestImplementation(TestLib.testExt)
+
+    debugImplementation(TestLib.fragmentTesting)
+    androidTestImplementation(TestLib.navigationTesting)
+
+    testImplementation (TestLib.coroutinesTest)
+    androidTestImplementation(TestLib.coroutinesTest)
+
+    api(SharedPreference.hawk)
+
 }

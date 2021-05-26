@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
-apply plugin: "com.gaelmarhic.quadrant"
 
 
 android {
@@ -26,6 +25,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        YouxelServer{
+            initWith debug
+        }
+
+        GaztTST{
+            initWith debug
+        }
+        GaztSTG{
+            initWith debug
+        }
+        GaztProd{
+            initWith debug
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -39,7 +51,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(":core")
+    api project(":entities")
+
     //kotlin
     implementation(Kotlin.kotlin_stdlib_jdk)
     implementation(Kotlin.kotlin_stdlib)

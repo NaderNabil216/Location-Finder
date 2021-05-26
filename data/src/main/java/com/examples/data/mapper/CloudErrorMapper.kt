@@ -1,8 +1,8 @@
 package com.examples.data.mapper
 
 import android.util.Log
-import com.examples.entities.response.ErrorModel
-import com.examples.entities.response.ErrorStatus
+import com.examples.entities.base.ErrorModel
+import com.examples.entities.base.ErrorStatus
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import okhttp3.ResponseBody
