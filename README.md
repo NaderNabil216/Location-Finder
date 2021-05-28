@@ -1,3 +1,3 @@
-# Android Clean Architecture
+# Location Finder App
 
 
