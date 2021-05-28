@@ -1,31 +1,44 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'de.mannodermaus.android-junit5'
 
 
 android {
     compileSdkVersion (Android.compileSdkVersion)
+
     defaultConfig {
-        applicationId = Android.applicationId
         minSdkVersion (Android.minSdkVersion)
         targetSdkVersion (Android.targetSdkVersion)
         versionCode = Android.versionCode
         versionName = Android.versionName
         multiDexEnabled true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
+        YouxelServer{
+            initWith debug
+        }
 
-    dataBinding {
-        enabled = true
+        GaztTST{
+            initWith debug
+        }
+        GaztSTG{
+            initWith debug
+        }
+        GaztProd{
+            initWith debug
+        }
     }
 
     compileOptions {
@@ -36,16 +49,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     api project(":core")
-    api project(":data")
     api project(":domain")
-    api project(":entities")
-    api project(":places_list")
+    api project(":navigation")
 
     //kotlin
     implementation(Kotlin.kotlin_stdlib_jdk)
@@ -71,25 +81,13 @@ dependencies {
     implementation(Androidx.navigation_ui)
     implementation(Androidx.lifecycle_viewmodel)
 
-    //Room
-    implementation(Androidx.room_runtime)
-    implementation(Androidx.room_ktx)
-    kapt(Androidx.room_compiler_kapt)
-
     //Material
     implementation(Material.material)
 
-    //picasso
-    implementation(Picasso.picasso)
+    //glide
+    implementation(Glide.glide)
+    kapt(Glide.glideProcess)
 
-    //Retrofit
-    implementation(Retrofit.retrofit2)
-    implementation(Retrofit.okhttp3)
-    implementation(Retrofit.converter_gson)
-    implementation(Retrofit.logging_interceptor)
-
-    //Gson
-    implementation(Gson.gson)
 
     //Coroutines
     implementation(Coroutines.core)
@@ -99,12 +97,60 @@ dependencies {
     implementation(Groupie.groupie)
     implementation(Groupie.groupie_extension)
 
-    //Shared Pref
-    implementation(SharedPreference.sharedPreference)
-
     //Hilt
     implementation(Hilt.hilt_android)
     implementation(Hilt.viewmodel)
     kapt(Hilt.kapt_hilt_android)
     kapt(Hilt.kapt_hilt_compiler)
+
+    //WorkManager
+    implementation(WorkManager.workManager)
+
+
+    //Gson
+    implementation(Gson.gson)
+
+    //Shared Pref
+    implementation(SharedPreference.sharedPreference)
+
+    //rounded image view
+    implementation(Lib.roundedImageView)
+    implementation(Lib.circleImageView)
+
+    //rounded layout
+    implementation(Lib.roundedLayout)
+
+
+
+    //test
+    testImplementation (TestLib.junit)
+    androidTestImplementation(TestLib.junit)
+    androidTestImplementation(TestLib.androidxTestCore)
+    androidTestImplementation(TestLib.androidxTestCoreKtx)
+    androidTestImplementation(TestLib.core_testing)
+
+    testImplementation(TestLib.junit_jupiter_api)
+    testImplementation(TestLib.junit_jupiter_params)
+    testRuntimeOnly(TestLib.junit_jupiter_engine)
+
+    testImplementation(TestLib.mockito_core)
+
+    androidTestImplementation(TestLib.kotlinTest)
+    androidTestImplementation(TestLib.espresso_core)
+    androidTestImplementation(TestLib.espresso_contrib)
+    androidTestImplementation(TestLib.androidx_espresso_idling_resource)
+    implementation(TestLib.androidx_espresso_idling_resource)
+
+    androidTestImplementation(TestLib.mockk)
+    androidTestImplementation(TestLib.runner)
+    androidTestImplementation(TestLib.testRules)
+    androidTestImplementation(TestLib.testExt)
+
+    debugImplementation(TestLib.fragmentTesting)
+    androidTestImplementation(TestLib.navigationTesting)
+
+    testImplementation (TestLib.coroutinesTest)
+    androidTestImplementation(TestLib.coroutinesTest)
+
+
 }

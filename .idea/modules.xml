@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Clean-architecture.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Clean-architecture.domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/Clean-architecture.entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/Clean-architecture.entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/Clean-architecture.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/Clean-architecture.navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/places_list/Clean-architecture.places_list.iml" filepath="$PROJECT_DIR$/.idea/modules/places_list/Clean-architecture.places_list.iml" />
     </modules>
   </component>
 </project>
