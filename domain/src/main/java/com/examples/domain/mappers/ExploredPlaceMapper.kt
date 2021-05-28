@@ -11,7 +11,7 @@ class ExploredPlaceMapper @Inject constructor() : ModelMapper<RemoteVenue, Explo
             ExploredPlace(
                 remoteVenue.name ?: "",
                 remoteVenue.categories?.first()?.icon?.let {
-                    it.prefix ?: "" + placeIconSize + it.suffix
+                    "${it.prefix ?: ""}$placeIconSize${it.suffix ?: ""}"
                 } ?: "",
                 remoteVenue.location?.address ?: ""
             )

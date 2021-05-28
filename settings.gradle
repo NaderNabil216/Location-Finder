@@ -1,3 +1,4 @@
+include ':places_list'
 include ':entities'
 include ':data'
 include ':navigation'

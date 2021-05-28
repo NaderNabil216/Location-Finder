@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.appizona.yehiahd.fastsave.FastSave
 import com.examples.core.utils.NetworkingUtils
+import com.orhanobut.hawk.Hawk
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -15,5 +16,10 @@ class App : Application() {
         MultiDex.install(this)
         NetworkingUtils.setNetworkingApplicationContext(this)
         FastSave.init(this)
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        Hawk.init(this).build()
     }
 }
