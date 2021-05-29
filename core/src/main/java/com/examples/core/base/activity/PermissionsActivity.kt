@@ -23,4 +23,5 @@ abstract class PermissionsActivity : BaseActivity() {
                 Toast.makeText(this, getString(R.string.permission_are_not_granted), Toast.LENGTH_SHORT).show()
             }
         }
+
 }

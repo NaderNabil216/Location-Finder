@@ -1,5 +1,6 @@
 package com.example.places_list.ui.fragment
 
+import android.location.Location
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +14,9 @@ import javax.inject.Inject
 @ExperimentalCoroutinesApi
 class PlacesListViewModel @ViewModelInject constructor(private val explorePlacesUsecase: ExplorePlacesUsecase) :
     BaseViewModel() {
+
+    var latestSavedLocation:Location?=null
+
     private val placesListResultsLiveData = MutableLiveData<List<ExploredPlace>>()
     val placesListResult: LiveData<List<ExploredPlace>> = placesListResultsLiveData
 
