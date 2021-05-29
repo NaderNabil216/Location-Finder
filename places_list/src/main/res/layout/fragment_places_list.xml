@@ -22,6 +22,7 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.SwitchCompat
+                android:checked="false"
                 android:id="@+id/locationSwitcher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
