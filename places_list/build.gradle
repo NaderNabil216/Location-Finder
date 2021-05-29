@@ -152,5 +152,9 @@ dependencies {
     testImplementation (TestLib.coroutinesTest)
     androidTestImplementation(TestLib.coroutinesTest)
 
-
+    // Location
+    implementation(Location.locus)
+    implementation(Location.gsm_location)
 }
+
+apply plugin: 'com.google.gms.google-services'

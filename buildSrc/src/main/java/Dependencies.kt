@@ -80,6 +80,10 @@ object Versions {
     val appCenterSdkVersion = "4.1.0"
 
     val hijriDatePickerVersion = "3.0.0"
+
+    val locus_location_version="3.0.1"
+
+    val gsm_location_version="17.0.0"
 }
 
 
@@ -292,4 +296,13 @@ object Lib {
 object Security {
     val crypto = "androidx.security:security-crypto:${Versions.security_crypto_version}"
     val okio = "com.squareup.okio:okio:${Versions.okio_version}"
+}
+
+object Location{
+    val locus = "com.github.BirjuVachhani:locus-android:${Versions.locus_location_version}"
+    val gsm_location="com.google.android.gms:play-services-location:${Versions.gsm_location_version}"
+}
+
+object plugin{
+    val google_services_plugin="com.google.gms.google-services"
 }
