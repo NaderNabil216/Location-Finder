@@ -9,20 +9,25 @@ import com.examples.domain.usecases.ExplorePlacesUsecase
 import com.examples.entities.explore_places.local.ExploredPlace
 import com.examples.entities.explore_places.query.ExplorePlacesQuery
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 class PlacesListViewModel @ViewModelInject constructor(private val explorePlacesUsecase: ExplorePlacesUsecase) :
     BaseViewModel() {
 
-    var latestSavedLocation:Location?=null
+    var latestSavedLocation: Location? = null
 
     private val placesListResultsLiveData = MutableLiveData<List<ExploredPlace>>()
     val placesListResult: LiveData<List<ExploredPlace>> = placesListResultsLiveData
 
     fun getPlacesList() {
         callApi(placesListResultsLiveData) {
-            explorePlacesUsecase.execute(ExplorePlacesQuery("31.260437,29.991096", "1000", "1000"), it)
+            explorePlacesUsecase.execute(
+                ExplorePlacesQuery(
+                    "${latestSavedLocation?.latitude ?: 0.0},${latestSavedLocation?.longitude ?: 0.0}",
+                    "1000",
+                    "1000"
+                ), it
+            )
         }
     }
 }

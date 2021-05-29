@@ -12,19 +12,19 @@ import com.birjuvachhani.locus.Locus
 import com.example.places_list.R
 import com.example.places_list.ui.activity.PlacesListActivity
 import com.example.places_list.ui.fragment.adapter.PlacesListAdapter
-import com.examples.core.base.activity.PermissionsActivity
 import com.examples.core.base.adapter.diffutilsAdapter.BaseRecyclerAdapter
 import com.examples.core.base.fragment.BaseFragment
+import com.examples.core.utils.showToast
 import com.examples.entities.explore_places.local.ExploredPlace
 import com.google.android.gms.location.LocationRequest
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_places_list.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import java.util.*
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class PlacesListFragment : BaseFragment<PlacesListViewModel>(),SwipeRefreshLayout.OnRefreshListener , ActivityCompat.OnRequestPermissionsResultCallback{
+class PlacesListFragment : BaseFragment<PlacesListViewModel>(),
+    SwipeRefreshLayout.OnRefreshListener, ActivityCompat.OnRequestPermissionsResultCallback {
     private val TAG = "####"
 
     override var layoutResourceId: Int = R.layout.fragment_places_list
@@ -34,10 +34,25 @@ class PlacesListFragment : BaseFragment<PlacesListViewModel>(),SwipeRefreshLayou
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         hideActivityToolbar()
-//        swipeContainer.setOnRefreshListener(this)
-//        observePlacesResults()
-//        onRefresh()
+        swipeContainer.setOnRefreshListener(this)
+        observePlacesResults()
+        onRefresh()
         initLocationFetching()
+        initViews()
+    }
+
+    private fun initViews() {
+        locationSwitcher.setOnCheckedChangeListener { _, isChecked ->
+            when (isChecked) {
+                true -> {
+                    startUpdates()
+                }
+                false -> {
+                    stopUpdates()
+                    getSingleUpdate()
+                }
+            }
+        }
     }
 
     private fun observePlacesResults() {
@@ -70,55 +85,25 @@ class PlacesListFragment : BaseFragment<PlacesListViewModel>(),SwipeRefreshLayou
         }
     }
 
-    private fun initLocationFetching(){
+    private fun initLocationFetching() {
         val request = LocationRequest.create()
         Intent(requireActivity(), PlacesListActivity::class.java).apply {
             putExtra("request", request)
         }
         Locus.setLogging(true)
-        startUpdates()
+        getSingleUpdate()
     }
 
     private fun getSingleUpdate() {
         Locus.getCurrentLocation(requireActivity()) { result ->
             result.location?.let {
-//                tvSingleUpdate.text = "${it.latitude}, ${it.longitude}"
-//                tvSingleUpdate.visibility = View.VISIBLE
-//                tvErrors.visibility = View.INVISIBLE
-                Log.e(TAG,"${it.latitude}, ${it.longitude}")
-            } ?: run {
-//                tvSingleUpdate.visibility = View.INVISIBLE
-//                tvErrors.text = result.error?.message
-//                tvErrors.visibility = View.VISIBLE
+                Log.e(TAG, "${it.latitude}, ${it.longitude}")
+                onLocationUpdate(it)
             }
         }
     }
 
-    private fun onLocationUpdate(location: Location) {
-//        btnStart.isEnabled = false
-//        btnStop.isEnabled = true
-//        llLocationData.visibility = View.VISIBLE
-//        tvNoLocation.visibility = View.GONE
-//        tvLatitude.text = location.latitude.toString()
-//        tvLongitude.text = location.longitude.toString()
-//        tvTime.text = getCurrentTimeString()
-//        tvErrors.visibility = View.INVISIBLE
-
-
-        Log.e(TAG, "Latitude: ${location.latitude}\tLongitude: ${location.longitude}")
-    }
-
-    private fun onError(error: Throwable?) {
-//        btnStart.isEnabled = true
-//        tvLatitude.text = ""
-//        tvLongitude.text = ""
-//        llLocationData.visibility = View.INVISIBLE
-        Log.e(TAG, "Error: ${error?.message}")
-//        tvErrors.text = error?.message
-//        tvErrors.visibility = View.VISIBLE
-    }
-
-    fun startUpdates() {
+    private fun startUpdates() {
         Locus.configure {
             enableBackgroundUpdates = false
             forceBackgroundUpdates = true
@@ -131,13 +116,32 @@ class PlacesListFragment : BaseFragment<PlacesListViewModel>(),SwipeRefreshLayou
         }
     }
 
-    fun stopUpdates() {
+    private fun stopUpdates() {
         Locus.stopLocationUpdates()
-//        btnStop.isEnabled = true
-//        btnStart.isEnabled = true
-//        llLocationData.visibility = View.INVISIBLE
-//        tvNoLocation.visibility = View.VISIBLE
-//        tvSingleUpdate.visibility = View.INVISIBLE
+    }
+
+    private fun onLocationUpdate(location: Location) {
+        Log.e(TAG, "Latitude: ${location.latitude}\tLongitude: ${location.longitude}")
+        when (viewModel.latestSavedLocation) {
+            null -> {
+                viewModel.latestSavedLocation = location
+                onRefresh()
+            }
+            else -> {
+                viewModel.latestSavedLocation?.distanceTo(location)?.let {
+                    if (it >= 500.0f) {
+                        viewModel.latestSavedLocation = location
+                        onRefresh()
+                    }
+                }
+            }
+
+        }
+    }
+
+    private fun onError(error: Throwable?) {
+        Log.e(TAG, "Error: ${error?.message}")
+        requireContext().showToast("Error: ${error?.message}")
     }
 
     override fun onDestroy() {
